@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix = "£")
@@ -69,3 +70,6 @@ async def configure_ticket(ctx, msg: discord.Message=None, category: discord.Cat
                 
     await msg.add_reaction(u"\U0001F3AB")
     await ctx.channel.send("Succesfully configured the ticket system.")
+    
+    access_token = os.environ["BOT_TOKEN"]
+    bot.run("access_token")
